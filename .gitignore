@@ -1,0 +1,6 @@
+.openai/
+.sites-runtime/
+node_modules/
+.netlify/
+.env
+.env.*
