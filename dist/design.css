@@ -22,3 +22,44 @@ section{padding:95px 0;border-color:#ffffff0c}.section-head{margin-bottom:38px;a
 .neighborhood-cover{background:radial-gradient(ellipse at 20% 20%,#ae8a5135,transparent 65%),linear-gradient(135deg,#332b3b,#19182c)}.neighborhood-cover::before{content:"04"}.neighborhood-cover strong{font-size:36px}html[dir=ltr] .neighborhood-cover strong{font-size:29px}@media(max-width:760px){.neighborhood-cover strong{font-size:30px}}
 
 .neighborhood-gallery{padding:14px;background:#0d1524;border-bottom:1px solid var(--line)}.neighborhood-photo{aspect-ratio:828/631;border:0;background:#22180f;border-radius:10px;overflow:hidden;padding:0;cursor:zoom-in}.neighborhood-photo img{object-fit:contain}html[data-theme=light] .neighborhood-gallery{background:#e6eefb}
+
+/* Image containers follow the card width instead of the viewport. */
+img { max-width: 100%; }
+.project, .identity, .projects > *, .hero > * { min-width: 0; }
+.nabih-gallery, .mango-gallery, .neighborhood-gallery { padding: 12px; }
+.gallery-main, .mango-photo, .neighborhood-photo {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  aspect-ratio: 4 / 3;
+}
+.gallery-main img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.gallery-main:hover img { transform: none; }
+.mango-photo { aspect-ratio: 3 / 4; max-height: 420px; }
+.neighborhood-photo { aspect-ratio: 828 / 631; }
+.portrait-frame { width: min(236px, 100%); height: auto; aspect-ratio: 1; }
+.gallery-thumbs button { min-width: 0; }
+.gallery-thumbs img { flex-shrink: 0; }
+.gallery-thumbs span { overflow-wrap: anywhere; }
+.image-dialog { box-sizing: border-box; max-width: calc(100vw - 24px); max-height: calc(100dvh - 24px); }
+.full-image { max-width: min(85vw, 100%); max-height: 74dvh; }
+@media (max-width: 760px) {
+  .portrait-frame { width: min(180px, 100%); height: auto; }
+  .mango-photo { max-height: 340px; }
+  .gallery-main > span { font-size: 13px; }
+  .image-dialog { padding: 12px; }
+  .full-image { max-width: 100%; max-height: 72dvh; }
+}
+@media (max-width: 380px) {
+  .nabih-gallery, .mango-gallery, .neighborhood-gallery { padding: 8px; }
+  .gallery-thumbs { gap: 6px; }
+  .gallery-thumbs button { gap: 7px; padding: 6px; }
+  .gallery-thumbs span { font-size: 12px; }
+  .gallery-thumbs img { width: 36px; height: 48px; }
+}
